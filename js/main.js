@@ -78,6 +78,30 @@
     }
   });
 
+  /* ---------- Look & Lease promo banner ---------- */
+  var promo = document.getElementById("promoBanner");
+  var promoClose = document.getElementById("promoClose");
+  var promoDismissed = false;
+  try {
+    promoDismissed = sessionStorage.getItem("promoDismissed") === "1";
+  } catch (err) { /* storage unavailable — show the banner */ }
+  if (!promoDismissed) {
+    promo.hidden = false;
+    window.setTimeout(function () {
+      promo.classList.add("is-open");
+    }, 1200);
+  }
+  promoClose.addEventListener("click", function () {
+    promo.classList.remove("is-open");
+    window.setTimeout(function () { promo.hidden = true; }, 500);
+    try { sessionStorage.setItem("promoDismissed", "1"); } catch (err) { /* ignore */ }
+  });
+  promo.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest(".promo__btn")) {
+      promoClose.click();
+    }
+  });
+
   /* ---------- Footer year ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
