@@ -12,7 +12,7 @@ js/main.js        — scroll reveals, counters, mobile nav, parallax, contact fo
 
 ## Sections
 
-Hero · Stats · Residences · Amenities · **Aerial Views (drone)** · Floor Plan · Gallery · Location · Apply CTA · Contact
+Hero · Intro · Amenities · **Aerial Views (drone)** · Now Leasing · Floor Plans · Gallery · Neighborhood · Contact
 
 ## Adding the drone footage
 
@@ -30,10 +30,10 @@ The animated golden frame around the section stays and will wrap the video autom
 
 ## Replacing placeholder photography
 
-The hero, "Residences" photos, and gallery currently use stock photography (Unsplash CDN) as stand-ins. To use real property photos:
+The hero, gallery, and neighborhood photos currently use stock photography (Unsplash CDN) as stand-ins. To use real property photos:
 
 1. Add images to an `img/` folder.
-2. Update the `background-image` URLs in `css/styles.css` — search for `images.unsplash.com` to find all of them (`.hero__img`, `.about__photo--a/b`, `.gallery__img--1` through `--5`).
+2. Update the `background-image` URLs in `css/styles.css` — search for `images.unsplash.com` to find all of them (`.hero__media`, `.gallery__img--1` through `--5`, `.hood__media`).
 
 Each image spot has a colored fallback, so nothing breaks if a URL is missing.
 
