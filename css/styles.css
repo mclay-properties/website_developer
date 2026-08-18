@@ -92,8 +92,11 @@ a { color: inherit; }
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease),
+    transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.35); }
+.btn:active { transform: translateY(0); box-shadow: none; }
 
 .btn--solid { background: var(--crimson); color: var(--white); }
 .btn--solid:hover { background: var(--crimson-dark); }
@@ -120,6 +123,11 @@ a { color: inherit; }
   background: var(--white);
   border-bottom: 1px solid var(--line);
   transition: box-shadow 0.3s var(--ease);
+  animation: header-in 0.7s var(--ease) both;
+}
+@keyframes header-in {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
 }
 .header.is-scrolled { box-shadow: 0 6px 24px -12px rgba(0, 0, 0, 0.18); }
 
@@ -194,6 +202,7 @@ a { color: inherit; }
   text-align: center;
   color: var(--white);
   margin-top: 62px;
+  overflow: hidden;
 }
 .hero__media {
   position: absolute;
@@ -202,6 +211,11 @@ a { color: inherit; }
     url("../img/hero.jpg") center / cover no-repeat,
     var(--dark);
   filter: brightness(0.88);
+  animation: hero-drift 22s ease-out both;
+}
+@keyframes hero-drift {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
 }
 .hero__overlay {
   position: absolute;
@@ -291,6 +305,8 @@ a { color: inherit; }
   border: 1px solid var(--crimson);
 }
 .amenity__icon svg { width: 26px; height: 26px; }
+.amenity__icon { transition: background 0.35s var(--ease), color 0.35s var(--ease); }
+.amenity:hover .amenity__icon { background: var(--crimson); color: var(--white); }
 .amenity h3 { margin-bottom: 0.6rem; }
 .amenity p { color: var(--ink-soft); font-size: 0.92rem; }
 
@@ -560,6 +576,8 @@ a { color: inherit; }
 }
 .gallery__item--wide .gallery__img { aspect-ratio: 16 / 9; }
 .gallery__item:hover .gallery__img { transform: scale(1.05); }
+.gallery__item figcaption { transition: transform 0.5s var(--ease); }
+.gallery__item:hover figcaption { transform: translateY(-4px); }
 .gallery__img--1 { background-image: url("../img/exterior.jpg"); }
 .gallery__img--2 { background-image: url("../img/living.jpg"); }
 .gallery__img--3 { background-image: url("../img/laundry.jpg"); }
@@ -811,6 +829,9 @@ a { color: inherit; }
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
 .fade.is-visible { opacity: 1; transform: translateY(0); }
+
+.rule.fade { transform: scaleX(0); transform-origin: center; }
+.rule.fade.is-visible { transform: scaleX(1); transition-duration: 1.1s; }
 
 /* ---------- Responsive ---------- */
 

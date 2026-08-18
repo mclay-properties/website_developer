@@ -42,8 +42,14 @@
       },
       { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
+    var heroIndex = 0;
     fadeEls.forEach(function (el, i) {
-      el.style.transitionDelay = (i % 3) * 90 + "ms";
+      if (el.closest(".hero")) {
+        el.style.transitionDelay = 150 + heroIndex * 160 + "ms";
+        heroIndex += 1;
+      } else {
+        el.style.transitionDelay = (i % 3) * 90 + "ms";
+      }
       observer.observe(el);
     });
   } else {
