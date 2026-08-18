@@ -170,45 +170,35 @@
         <h2 class="h2--center fade">Discover Your Ideal Living Space</h2>
         <div class="plan fade">
           <div class="plan__media">
-            <svg class="plan__svg" viewBox="0 0 520 400" role="img" aria-label="Sample two-bedroom floor plan of an Aspen Square apartment">
-              <rect x="10" y="10" width="500" height="380" class="fp-wall"/>
-              <text x="120" y="120" class="fp-label">LIVING ROOM</text>
-              <rect x="55" y="140" width="120" height="55" class="fp-furn"/>
-              <rect x="70" y="210" width="90" height="40" class="fp-furn-lt"/>
-              <line x1="240" y1="10" x2="240" y2="180" class="fp-inner"/>
-              <text x="300" y="60" class="fp-label">DINING</text>
-              <circle cx="320" cy="110" r="32" class="fp-furn-lt"/>
-              <line x1="240" y1="180" x2="400" y2="180" class="fp-inner"/>
-              <text x="285" y="220" class="fp-label">KITCHEN</text>
-              <rect x="250" y="235" width="130" height="22" class="fp-furn"/>
-              <rect x="250" y="265" width="60" height="45" class="fp-furn-lt"/>
-              <line x1="240" y1="330" x2="400" y2="330" class="fp-inner"/>
-              <line x1="400" y1="10" x2="400" y2="390" class="fp-inner"/>
-              <text x="290" y="360" class="fp-label">HALL &middot; LAUNDRY</text>
-              <text x="418" y="50" class="fp-label">BEDROOM 1</text>
-              <rect x="425" y="70" width="70" height="90" class="fp-furn"/>
-              <line x1="400" y1="190" x2="510" y2="190" class="fp-inner"/>
-              <text x="430" y="220" class="fp-label">BATH</text>
-              <rect x="425" y="230" width="30" height="45" class="fp-furn-lt"/>
-              <line x1="400" y1="290" x2="510" y2="290" class="fp-inner"/>
-              <text x="418" y="318" class="fp-label">BEDROOM 2</text>
-              <rect x="425" y="328" width="70" height="50" class="fp-furn"/>
-              <line x1="10" y1="300" x2="120" y2="300" class="fp-inner"/>
-              <text x="35" y="340" class="fp-label">ENTRY</text>
-              <path d="M120 300a40 40 0 0 1-40 40" class="fp-door"/>
-            </svg>
+            <img src="img/floor-plan.jpg" alt="Furniture plan of a two-bedroom Aspen Square apartment showing living room, kitchen, bath and both bedrooms" loading="lazy">
           </div>
           <div class="plan__info">
             <h3>Two Bedroom</h3>
-            <p class="plan__desc">An open, light-filled layout with room to host, work and unwind — plus in-home laundry hookups and generous closet space.</p>
+            <p class="plan__desc">An open, light-filled layout with room to host, work and unwind — plus laundry and generous closet space.</p>
             <ul class="plan__facts">
               <li><span>Bedrooms</span><strong>2</strong></li>
               <li><span>Bathroom</span><strong>1 Full</strong></li>
-              <li><span>Laundry</span><strong>In-Home Hookups</strong></li>
+              <li><span>Laundry</span><strong>Hookups Available</strong></li>
               <li><span>Parking</span><strong>Garage / Carport</strong></li>
             </ul>
             <a href="#contact" class="btn btn--solid">Check Availability</a>
-            <p class="plan__note">Sample floor plan showing possible furniture arrangements.</p>
+            <p class="plan__note">Furniture plan of a two-bedroom home at Aspen Square.</p>
+          </div>
+        </div>
+
+        <!--
+          ZILLOW 3D HOME TOUR
+          When the tour is published, paste its share link into data-tour-url below, e.g.
+          data-tour-url="https://www.zillow.com/view-3d-home/YOUR-TOUR-ID/"
+          See README.md for details.
+        -->
+        <div class="tour fade" id="tour" data-tour-url="">
+          <div class="tour__media" aria-hidden="true"></div>
+          <div class="tour__text">
+            <p class="eyebrow eyebrow--onDark">Virtual Tour</p>
+            <h3>Walk Through in 360&deg;</h3>
+            <p>Explore a two-bedroom home from anywhere — a full 360&deg; virtual tour, powered by Zillow 3D Home.</p>
+            <button type="button" class="btn btn--white" id="tourOpen">Take the 360&deg; Tour</button>
           </div>
         </div>
       </div>
@@ -230,15 +220,15 @@
           </figure>
           <figure class="gallery__item fade">
             <div class="gallery__img gallery__img--3"></div>
-            <figcaption>Modern Kitchens</figcaption>
+            <figcaption>Laundry Facilities</figcaption>
           </figure>
           <figure class="gallery__item fade">
             <div class="gallery__img gallery__img--4"></div>
-            <figcaption>Comfortable Bedrooms</figcaption>
+            <figcaption>Private Garages &amp; Storage</figcaption>
           </figure>
           <figure class="gallery__item gallery__item--wide fade">
             <div class="gallery__img gallery__img--5"></div>
-            <figcaption>Kiwanis Park, Across the Street</figcaption>
+            <figcaption>Community Map &mdash; Garages, Carports &amp; Storage</figcaption>
           </figure>
         </div>
       </div>
@@ -331,6 +321,7 @@
         <a href="#amenities">Amenities</a>
         <a href="#aerial">Aerial Views</a>
         <a href="#floorplans">Floor Plans</a>
+        <a href="#tour">Virtual Tour</a>
         <a href="#gallery">Gallery</a>
         <a href="#neighborhood">Neighborhood</a>
         <a href="#contact">Contact</a>
@@ -346,6 +337,20 @@
       <p>&copy; <span id="year">2026</span> McLay Properties. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- ============ VIRTUAL TOUR LIGHTBOX ============ -->
+  <div class="modal" id="tourModal" role="dialog" aria-modal="true" aria-label="360 degree virtual tour" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" id="tourClose" aria-label="Close virtual tour">&times;</button>
+      <div class="modal__body" id="tourBody">
+        <div class="modal__pending">
+          <p class="modal__pending-title">360&deg; Tour Coming Soon</p>
+          <p class="modal__pending-sub">We're capturing the virtual tour with Zillow 3D Home. In the meantime, call <a href="tel:16087748945">608-774-8945</a> to schedule an in-person tour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ LOOK & LEASE BANNER ============ -->
   <aside class="promo" id="promoBanner" role="region" aria-label="Leasing special" hidden>

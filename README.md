@@ -28,14 +28,19 @@ The **Aerial Views** section (`#aerial`) is a reserved cinematic showcase, curre
 
 The animated golden frame around the section stays and will wrap the video automatically. For a large file, consider hosting the video on a CDN or as an unlisted YouTube/Vimeo embed instead and placing the `<iframe>` in the same spot.
 
-## Replacing placeholder photography
+## Photography
 
-The hero, gallery, and neighborhood photos currently use stock photography (Unsplash CDN) as stand-ins. To use real property photos:
+All photos in `img/` are the real property images from the current mclayproperties.com (exterior/sign, living room, laundry room, garages, the two-bedroom furniture plan, the community site map, and the annotated aerial area map). To swap any of them, replace the file in `img/` keeping the same name, or update the URLs in `css/styles.css` (`.hero__media`, `.gallery__img--1` through `--5`, `.hood__media`, `.tour__media`) and `index.html` (`img/floor-plan.jpg`).
 
-1. Add images to an `img/` folder.
-2. Update the `background-image` URLs in `css/styles.css` — search for `images.unsplash.com` to find all of them (`.hero__media`, `.gallery__img--1` through `--5`, `.hood__media`).
+## Adding the Zillow 3D Home virtual tour
 
-Each image spot has a colored fallback, so nothing breaks if a URL is missing.
+The Floor Plans section ends with a "Walk Through in 360°" block whose button opens a lightbox. Until a tour link is configured, the lightbox shows a "coming soon" message.
+
+1. Capture the unit with the free [Zillow 3D Home app](https://www.zillow.com/z/3d-home/) and publish the tour.
+2. Copy the tour's share link (looks like `https://www.zillow.com/view-3d-home/XXXXXXXX/`).
+3. In `index.html`, find `id="tour"` and paste the link into the empty `data-tour-url=""` attribute.
+
+The lightbox then loads the tour in an embedded frame the first time it's opened.
 
 ## Contact form
 

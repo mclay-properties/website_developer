@@ -78,6 +78,35 @@
     }
   });
 
+  /* ---------- Virtual tour modal ---------- */
+  var tourModal = document.getElementById("tourModal");
+  var tourBody = document.getElementById("tourBody");
+  var tourSection = document.getElementById("tour");
+  var tourLoaded = false;
+  var openTour = function () {
+    var url = tourSection.getAttribute("data-tour-url");
+    if (url && !tourLoaded) {
+      var frame = document.createElement("iframe");
+      frame.src = url;
+      frame.allow = "fullscreen; gyroscope; accelerometer";
+      frame.title = "Zillow 3D Home virtual tour of an Aspen Square two-bedroom apartment";
+      tourBody.replaceChildren(frame);
+      tourLoaded = true;
+    }
+    tourModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  };
+  var closeTour = function () {
+    tourModal.hidden = true;
+    document.body.style.overflow = "";
+  };
+  document.getElementById("tourOpen").addEventListener("click", openTour);
+  document.getElementById("tourClose").addEventListener("click", closeTour);
+  tourModal.querySelector(".modal__backdrop").addEventListener("click", closeTour);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !tourModal.hidden) closeTour();
+  });
+
   /* ---------- Look & Lease promo banner ---------- */
   var promo = document.getElementById("promoBanner");
   var promoClose = document.getElementById("promoClose");
