@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McLay Properties — Aspen Square Apartments | Janesville, WI</title>
+  <meta name="description" content="Beautiful, spacious 2-bedroom apartment homes on Janesville's Eastside. Condo living without the maintenance fees. Utilities, lawn care and snow removal included.">
+  <meta property="og:title" content="McLay Properties — Aspen Square Apartments">
+  <meta property="og:description" content="Condo living without the maintenance fees. Spacious 2-bedroom apartment homes on Janesville's Eastside, across from Kiwanis Park.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">
+        <svg class="nav__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 4 4 18v18h11V25h10v11h11V18Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__name">McLay<em>Properties</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#residences">Residences</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#aerial">Aerial Views</a>
+        <a href="#floorplan">Floor Plan</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#contact" class="nav__cta">Apply Now</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__img"></div>
+        <div class="hero__scrim"></div>
+      </div>
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Aspen Square Apartments · Janesville, Wisconsin</p>
+        <h1 class="hero__title reveal">Condo living.<br><span>Without the maintenance fees.</span></h1>
+        <p class="hero__sub reveal">Beautiful, spacious two-bedroom apartment homes on Janesville's Eastside — directly across from Kiwanis Park, minutes from the Interstate.</p>
+        <div class="hero__actions reveal">
+          <a href="#contact" class="btn btn--primary">Schedule a Tour</a>
+          <a href="#aerial" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            Watch From Above
+          </a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#stats" aria-label="Scroll down">
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ============ STATS BAR ============ -->
+    <section class="stats" id="stats">
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num" data-count="2">0</span>
+          <span class="stat__label">Bedroom Homes</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <span class="stat__label">Maintenance Covered</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="5" data-prefix="~">0</span>
+          <span class="stat__label">Min to I-39 / I-90</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num stat__num--text">Park</span>
+          <span class="stat__label">Right Across the Street</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESIDENCES / ABOUT ============ -->
+    <section class="about section" id="residences">
+      <div class="section__inner about__grid">
+        <div class="about__text">
+          <p class="eyebrow reveal">The Residences</p>
+          <h2 class="reveal">Room to live. <br>Freedom to relax.</h2>
+          <p class="lead reveal">Every home at Aspen Square is a spacious two-bedroom retreat designed for comfortable, low-stress living. We handle the upkeep — you enjoy the neighborhood.</p>
+          <ul class="about__list">
+            <li class="reveal"><strong>Utilities handled</strong> — trash, recycling &amp; water included in rent.</li>
+            <li class="reveal"><strong>Seasons covered</strong> — snow removal in winter, lawn care all summer.</li>
+            <li class="reveal"><strong>In-home laundry hookups</strong> — no shared laundromat trips.</li>
+            <li class="reveal"><strong>Your car, covered</strong> — onsite parking, carports &amp; private garages.</li>
+            <li class="reveal"><strong>Extra space</strong> — storage units available onsite.</li>
+          </ul>
+          <a href="#floorplan" class="btn btn--dark reveal">Explore the Floor Plan</a>
+        </div>
+        <div class="about__media reveal" aria-hidden="true">
+          <div class="about__photo about__photo--a"></div>
+          <div class="about__photo about__photo--b"></div>
+          <div class="about__badge">
+            <span class="about__badge-num">2BR</span>
+            <span class="about__badge-text">Spacious Homes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AMENITIES ============ -->
+    <section class="amenities section section--tint" id="amenities">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Amenities</p>
+        <h2 class="reveal">Everything included.<br>Nothing to worry about.</h2>
+        <div class="amenities__grid">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5M7 21V11m10 10V11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Utilities Included</h3>
+            <p>Trash, recycling and water are all built into your rent — one simple payment, no surprises.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8 3 3M19 5l-3 3M8 16l-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Snow Removal</h3>
+            <p>Wisconsin winters, handled. Wake up to cleared drives and walkways — never shovel again.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22V12m0 0c0-4 2.5-7 6-8-1 4-2.5 6.5-6 8Zm0 0c0-4-2.5-7-6-8 1 4 2.5 6.5 6 8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Lawn Care</h3>
+            <p>Green, manicured grounds all season long — enjoy the outdoors without the yard work.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 6V4h10v2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            </div>
+            <h3>Laundry Hookups</h3>
+            <p>Washer and dryer hookups in your home — laundry day on your schedule, not the building's.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 17h18M5 17l1.5-5h11L19 17M8 12V9h8v3M7 20a1.5 1.5 0 1 0 0-3m10 3a1.5 1.5 0 1 0 0-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Garages &amp; Carports</h3>
+            <p>Onsite parking with carports and private garages available — your vehicle stays protected year-round.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 8h16v12H4zM4 8l2-4h12l2 4M12 12v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Storage Units</h3>
+            <p>Onsite storage for bikes, holiday boxes and everything in between — keep your home clutter-free.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AERIAL / DRONE SHOWCASE ============ -->
+    <section class="aerial section" id="aerial">
+      <div class="section__inner">
+        <div class="aerial__head">
+          <p class="eyebrow eyebrow--light reveal">
+            <svg class="aerial__drone-ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 9h6v6H9zM4 4l5 5m6 0 5-5M9 15l-5 5m11 0-5-5M2 4h4M2 4v2m16-2h4m-2 0v2M2 20h4m-2 0v-2m16 2h4m-2 0v-2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Aerial Views
+          </p>
+          <h2 class="reveal">Aspen Square, from above.</h2>
+          <p class="lead lead--light reveal">See the whole neighborhood at once — the grounds, Kiwanis Park across the street, and everything within reach. Cinematic drone footage is on its way.</p>
+        </div>
+
+        <!--
+          DRONE FOOTAGE DROP-IN POINT
+          When the footage is ready, replace the contents of .aerial__frame with:
+          <video class="aerial__video" src="media/aspen-square-drone.mp4" poster="media/drone-poster.jpg" controls playsinline></video>
+          See README.md for details.
+        -->
+        <div class="aerial__frame reveal" id="droneFrame">
+          <div class="aerial__placeholder">
+            <div class="aerial__sky" aria-hidden="true">
+              <span class="aerial__cloud aerial__cloud--1"></span>
+              <span class="aerial__cloud aerial__cloud--2"></span>
+              <span class="aerial__cloud aerial__cloud--3"></span>
+              <svg class="aerial__drone" viewBox="0 0 120 60" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <rect x="48" y="26" width="24" height="10" rx="4"/>
+                  <path d="M48 30H30m42 0h18"/>
+                  <circle cx="24" cy="30" r="3"/>
+                  <circle cx="96" cy="30" r="3"/>
+                  <path class="aerial__rotor" d="M12 30h24"/>
+                  <path class="aerial__rotor" d="M84 30h24"/>
+                  <path d="M56 36l-6 8m14-8 6 8"/>
+                </g>
+              </svg>
+            </div>
+            <div class="aerial__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </div>
+            <p class="aerial__coming">Drone footage coming soon</p>
+            <p class="aerial__coming-sub">A bird's-eye tour of Aspen Square &amp; Janesville's Eastside</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLOOR PLAN ============ -->
+    <section class="floorplan section section--tint" id="floorplan">
+      <div class="section__inner floorplan__grid">
+        <div class="floorplan__text">
+          <p class="eyebrow reveal">The Floor Plan</p>
+          <h2 class="reveal">Designed around <br>everyday life.</h2>
+          <p class="lead reveal">An open, light-filled two-bedroom layout with room to host, work and unwind — plus in-home laundry and generous closet space.</p>
+          <dl class="floorplan__facts">
+            <div class="reveal"><dt>Bedrooms</dt><dd>2</dd></div>
+            <div class="reveal"><dt>Bathroom</dt><dd>1 full</dd></div>
+            <div class="reveal"><dt>Laundry</dt><dd>In-home hookups</dd></div>
+            <div class="reveal"><dt>Parking</dt><dd>Garage / carport</dd></div>
+          </dl>
+          <p class="floorplan__note reveal">Sample floor plan showing possible furniture arrangements.</p>
+        </div>
+        <div class="floorplan__media reveal">
+          <svg class="floorplan__svg" viewBox="0 0 520 400" role="img" aria-label="Sample two-bedroom floor plan of an Aspen Square apartment">
+            <!-- outer walls -->
+            <rect x="10" y="10" width="500" height="380" rx="4" class="fp-wall"/>
+            <!-- living room -->
+            <text x="120" y="120" class="fp-label">LIVING ROOM</text>
+            <rect x="55" y="140" width="120" height="55" rx="6" class="fp-furn"/>
+            <rect x="70" y="210" width="90" height="40" rx="4" class="fp-furn-lt"/>
+            <!-- dining -->
+            <line x1="240" y1="10" x2="240" y2="180" class="fp-inner"/>
+            <text x="300" y="60" class="fp-label">DINING</text>
+            <circle cx="320" cy="110" r="32" class="fp-furn-lt"/>
+            <!-- kitchen -->
+            <line x1="240" y1="180" x2="400" y2="180" class="fp-inner"/>
+            <text x="285" y="220" class="fp-label">KITCHEN</text>
+            <rect x="250" y="235" width="130" height="22" rx="3" class="fp-furn"/>
+            <rect x="250" y="265" width="60" height="45" rx="3" class="fp-furn-lt"/>
+            <!-- hall -->
+            <line x1="240" y1="330" x2="400" y2="330" class="fp-inner"/>
+            <line x1="400" y1="10" x2="400" y2="390" class="fp-inner"/>
+            <text x="290" y="360" class="fp-label">HALL · LAUNDRY</text>
+            <!-- bedroom 1 -->
+            <text x="418" y="50" class="fp-label">BEDROOM 1</text>
+            <rect x="425" y="70" width="70" height="90" rx="4" class="fp-furn"/>
+            <line x1="400" y1="190" x2="510" y2="190" class="fp-inner"/>
+            <!-- bath -->
+            <text x="430" y="220" class="fp-label">BATH</text>
+            <rect x="425" y="230" width="30" height="45" rx="10" class="fp-furn-lt"/>
+            <line x1="400" y1="290" x2="510" y2="290" class="fp-inner"/>
+            <!-- bedroom 2 -->
+            <text x="418" y="318" class="fp-label">BEDROOM 2</text>
+            <rect x="425" y="328" width="70" height="50" rx="4" class="fp-furn"/>
+            <!-- entry -->
+            <line x1="10" y1="300" x2="120" y2="300" class="fp-inner"/>
+            <text x="35" y="340" class="fp-label">ENTRY</text>
+            <path d="M120 300a40 40 0 0 1-40 40" class="fp-door"/>
+          </svg>
+          <span class="floorplan__tag">Sample 2-Bedroom Layout</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery section" id="gallery">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Gallery</p>
+        <h2 class="reveal">A look around Aspen Square.</h2>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--wide reveal">
+            <div class="gallery__img gallery__img--1"></div>
+            <figcaption>Aspen Square exteriors</figcaption>
+          </figure>
+          <figure class="gallery__item reveal">
+            <div class="gallery__img gallery__img--2"></div>
+            <figcaption>Bright, open living spaces</figcaption>
+          </figure>
+          <figure class="gallery__item reveal">
+            <div class="gallery__img gallery__img--3"></div>
+            <figcaption>Modern kitchens</figcaption>
+          </figure>
+          <figure class="gallery__item reveal">
+            <div class="gallery__img gallery__img--4"></div>
+            <figcaption>Comfortable bedrooms</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide reveal">
+            <div class="gallery__img gallery__img--5"></div>
+            <figcaption>Kiwanis Park, right across the street</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOCATION ============ -->
+    <section class="location section section--dark" id="location">
+      <div class="section__inner location__grid">
+        <div class="location__text">
+          <p class="eyebrow eyebrow--light reveal">The Neighborhood</p>
+          <h2 class="reveal">Janesville's Eastside,<br>at your doorstep.</h2>
+          <ul class="location__list">
+            <li class="reveal">
+              <span class="location__num">01</span>
+              <div><strong>Kiwanis Park</strong><p>Directly across the street — trails, green space and open sky.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="location__num">02</span>
+              <div><strong>Woodman's Food Market</strong><p>Groceries minutes away, alongside Janesville's finest shopping and dining.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="location__num">03</span>
+              <div><strong>Interstate Access</strong><p>Quick connections to I-39 / I-90 for easy commutes to Madison, Beloit and beyond.</p></div>
+            </li>
+          </ul>
+          <a class="btn btn--light reveal" href="https://www.google.com/maps/search/?api=1&amp;query=2605+N+Pontiac+Dr+Janesville+WI" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <div class="location__map reveal" aria-hidden="true">
+          <div class="location__map-art">
+            <svg viewBox="0 0 400 400" class="location__map-svg">
+              <defs>
+                <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="currentColor" stop-opacity=".35"/>
+                  <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <g class="map-roads" fill="none" stroke-linecap="round">
+                <path d="M-20 120 C 90 100, 210 150, 420 110" stroke-width="10"/>
+                <path d="M60 -20 C 80 120, 60 260, 100 420" stroke-width="10"/>
+                <path d="M-20 260 C 140 250, 260 290, 420 250" stroke-width="6"/>
+                <path d="M220 -20 C 210 140, 250 280, 230 420" stroke-width="6"/>
+                <path d="M320 -20 C 330 120, 300 300, 340 420" stroke-width="4"/>
+              </g>
+              <circle cx="230" cy="205" r="70" fill="url(#pulse)" class="map-pulse"/>
+              <g class="map-pin">
+                <path d="M230 165c-16 0-28 12-28 27 0 20 28 43 28 43s28-23 28-43c0-15-12-27-28-27z"/>
+                <circle cx="230" cy="192" r="10" class="map-pin-dot"/>
+              </g>
+              <text x="230" y="260" text-anchor="middle" class="map-label">2605 N. Pontiac Dr.</text>
+              <rect x="255" y="130" width="90" height="55" rx="8" class="map-park"/>
+              <text x="300" y="160" text-anchor="middle" class="map-label map-label--park">Kiwanis Park</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APPLY CTA ============ -->
+    <section class="cta section">
+      <div class="section__inner cta__inner reveal">
+        <h2>Ready to call Aspen Square home?</h2>
+        <p>Tours are easy to schedule and applications are simple. Call today — homes go quickly.</p>
+        <div class="cta__actions">
+          <a href="tel:16087748945" class="btn btn--primary btn--lg">Call 608-774-8945</a>
+          <a href="#contact" class="btn btn--dark btn--lg">Request an Application</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section section--tint" id="contact">
+      <div class="section__inner contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow reveal">Contact</p>
+          <h2 class="reveal">Let's find your <br>new home.</h2>
+          <address class="contact__details">
+            <div class="contact__row reveal">
+              <span class="contact__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <div>
+                <strong>Aspen Square Apartments</strong>
+                <p>2605 N. Pontiac Dr.<br>Janesville, WI</p>
+              </div>
+            </div>
+            <div class="contact__row reveal">
+              <span class="contact__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <strong>Call or Text</strong>
+                <p>
+                  <a href="tel:16087748945">608-774-8945</a><br>
+                  <a href="tel:16087748718">608-774-8718</a><br>
+                  <a href="tel:16087562926">608-756-2926</a>
+                </p>
+              </div>
+            </div>
+          </address>
+        </div>
+        <form class="contact__form reveal" id="contactForm">
+          <h3>Request a tour or application</h3>
+          <div class="form__row">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="(608) 555-0123" required>
+            </label>
+          </div>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com">
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="I'd like to schedule a tour of Aspen Square…"></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full">Send Inquiry</button>
+          <p class="form__note">Prefer to talk? Call <a href="tel:16087748945">608-774-8945</a> — we're happy to help.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <svg class="nav__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 4 4 18v18h11V25h10v11h11V18Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <span>McLay<em>Properties</em></span>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#residences">Residences</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#aerial">Aerial Views</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__legal">© <span id="year">2026</span> McLay Properties · Aspen Square Apartments · Janesville, WI</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
