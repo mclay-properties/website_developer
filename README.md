@@ -20,7 +20,7 @@ The hero background is real drone footage (`media/hero-drone.webm` + `media/hero
 
 ## Aerial Views section
 
-Three drone flights live in the Aerial Views section (`#aerial`) with a tab selector: Community Overhead, Kiwanis Park Flyby, and Kiwanis Park to Aspen Square. Files are `media/aerial-*.mp4` (1280p, muted, streaming-optimized) with poster frames in `img/aerial/`. To add or swap a flight, add the compressed MP4 + poster and a matching `.aerial__tab` button in `index.html` (`data-video` / `data-poster`).
+Three drone flights live in the Aerial Views section (`#aerial`) with a tab selector: Community Overhead, Kiwanis Park Flyover, and Kiwanis Park to Aspen Square. Files are `media/aerial-*.mp4` (1280p, muted, streaming-optimized) with poster frames in `img/aerial/`. To add or swap a flight, add the compressed MP4 + poster and a matching `.aerial__tab` button in `index.html` (`data-video` / `data-poster`).
 
 
 ## Photography
