@@ -789,6 +789,8 @@ a { color: inherit; }
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
 }
+.footer__credit { margin-top: 0.3rem; font-size: 0.7rem; color: rgba(255, 255, 255, 0.35); }
+.footer__credit a { color: rgba(255, 255, 255, 0.45); }
 
 /* ---------- Look & Lease promo banner ---------- */
 
