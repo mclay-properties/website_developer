@@ -257,6 +257,31 @@ a { color: inherit; }
   flex-wrap: wrap;
 }
 
+.hero__audio {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.hero__audio:hover { background: rgba(0, 0, 0, 0.55); border-color: var(--white); transform: scale(1.06); }
+.hero__audio:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+.hero__audio .hero__audio-waves { opacity: 0; transition: opacity 0.25s; }
+.hero__audio .hero__audio-slash { opacity: 1; transition: opacity 0.25s; }
+.hero__audio[aria-pressed="true"] .hero__audio-waves { opacity: 1; }
+.hero__audio[aria-pressed="true"] .hero__audio-slash { opacity: 0; }
+
 /* ---------- Intro ---------- */
 
 .intro {
@@ -315,7 +340,7 @@ a { color: inherit; }
 /* ---------- Aerial / Drone ---------- */
 
 .aerial {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='32'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.055)' stroke-width='1'%3E%3Cpath d='M0 32L32 0M32 32L64 0M-16 16L16-16M16 48L48 16M48 48L80 16'/%3E%3C/g%3E%3C/svg%3E") var(--dark);
+  background: var(--dark);
   padding: clamp(4.5rem, 9vw, 7.5rem) 0;
 }
 .aerial__lead {

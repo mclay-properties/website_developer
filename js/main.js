@@ -79,8 +79,25 @@
       var note = document.createElement("p");
       note.className = "form__success";
       note.textContent =
-        "Opening your email app… If it doesn't open, call us at 608-774-8945.";
+        "Opening your email app… If it doesn't open, call us at 608-774-8718.";
       form.appendChild(note);
+    }
+  });
+
+  /* ---------- Background music toggle ---------- */
+  var music = document.getElementById("bgMusic");
+  var audioToggle = document.getElementById("audioToggle");
+  music.volume = 0.45;
+  audioToggle.addEventListener("click", function () {
+    if (music.paused) {
+      music.play().then(function () {
+        audioToggle.setAttribute("aria-pressed", "true");
+        audioToggle.setAttribute("aria-label", "Pause background music");
+      }).catch(function () { /* playback blocked — leave toggled off */ });
+    } else {
+      music.pause();
+      audioToggle.setAttribute("aria-pressed", "false");
+      audioToggle.setAttribute("aria-label", "Play background music");
     }
   });
 
@@ -120,16 +137,26 @@
   try {
     promoDismissed = sessionStorage.getItem("promoDismissed") === "1";
   } catch (err) { /* storage unavailable — show the banner */ }
+  var positionAudioToggle = function () {
+    if (!promo.hidden && promo.classList.contains("is-open")) {
+      audioToggle.style.bottom = promo.offsetHeight + 16 + "px";
+    } else {
+      audioToggle.style.bottom = "";
+    }
+  };
+  window.addEventListener("resize", positionAudioToggle, { passive: true });
   if (!promoDismissed) {
     promo.hidden = false;
     window.setTimeout(function () {
       promo.classList.add("is-open");
+      window.setTimeout(positionAudioToggle, 520);
     }, 1200);
   }
   promoClose.addEventListener("click", function () {
     promo.classList.remove("is-open");
     window.setTimeout(function () { promo.hidden = true; }, 500);
     try { sessionStorage.setItem("promoDismissed", "1"); } catch (err) { /* ignore */ }
+    positionAudioToggle();
   });
   promo.addEventListener("click", function (e) {
     if (e.target.closest && e.target.closest(".promo__btn")) {

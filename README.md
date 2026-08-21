@@ -53,5 +53,5 @@ The form currently opens the visitor's email app (`mailto:`) pre-filled with the
 ## Content notes
 
 - Address: 2605 N. Pontiac Dr., Janesville, WI
-- Phones: 608-774-8945 · 608-774-8718 · 608-756-2926
+- Phone: 608-774-8718
 - Tagline retained from the original site: "Condo living without the maintenance fees."
