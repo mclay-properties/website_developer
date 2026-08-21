@@ -134,9 +134,6 @@
   var promo = document.getElementById("promoBanner");
   var promoClose = document.getElementById("promoClose");
   var promoDismissed = false;
-  try {
-    promoDismissed = sessionStorage.getItem("promoDismissed") === "1";
-  } catch (err) { /* storage unavailable — show the banner */ }
   var positionAudioToggle = function () {
     if (!promo.hidden && promo.classList.contains("is-open")) {
       audioToggle.style.bottom = promo.offsetHeight + 16 + "px";
@@ -155,7 +152,6 @@
   promoClose.addEventListener("click", function () {
     promo.classList.remove("is-open");
     window.setTimeout(function () { promo.hidden = true; }, 500);
-    try { sessionStorage.setItem("promoDismissed", "1"); } catch (err) { /* ignore */ }
     positionAudioToggle();
   });
   promo.addEventListener("click", function (e) {
