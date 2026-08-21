@@ -880,21 +880,10 @@ a { color: inherit; }
 }
 
 @media (max-width: 780px) {
-  .header__toggle { display: flex; }
-  .header__nav {
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.98);
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.8rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s var(--ease);
-    z-index: -1;
-  }
-  .header__nav.is-open { opacity: 1; pointer-events: auto; z-index: 99; }
-  .header__nav a:not(.btn) { font-size: 1rem; }
+  /* No hamburger menu on mobile: the header shows only the brand and
+     visitors navigate by scrolling. Desktop keeps the full nav. */
+  .header__toggle { display: none; }
+  .header__nav { display: none; }
   .amenities__grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .gallery__item, .gallery__item--wide { grid-column: span 6; }
