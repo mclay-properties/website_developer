@@ -14,7 +14,11 @@ js/main.js        — scroll reveals, counters, mobile nav, parallax, contact fo
 
 Hero · Intro · Amenities · **Aerial Views (drone)** · Now Leasing · Floor Plans · Gallery · Neighborhood · Contact
 
-## Adding the drone footage
+## Hero drone video
+
+The hero background is real drone footage (`media/hero-drone.webm` + `media/hero-drone.mp4`, muted auto-playing loop, ~5 MB each) compressed from "Aspen Square Overhead Fly Through - Home Page.MP4". `img/hero-poster.jpg` shows while it loads and `img/hero.jpg` is the static fallback. To swap the clip, re-encode with ffmpeg (scale to 1280px, strip audio, `-movflags +faststart` for the mp4) and replace both files.
+
+## Adding the drone footage (Aerial Views section)
 
 The **Aerial Views** section (`#aerial`) is a reserved cinematic showcase, currently showing an animated "coming soon" placeholder. When the footage is ready:
 
