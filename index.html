@@ -139,29 +139,18 @@
       <div class="container">
         <p class="eyebrow eyebrow--center eyebrow--onDark fade">Aerial Views</p>
         <h2 class="h2--center h2--onDark fade">Aspen Square From Above</h2>
-        <p class="aerial__lead fade">A cinematic bird's-eye tour of the community, the grounds, and Kiwanis Park across the street — drone footage arriving soon.</p>
-        <!--
-          DRONE FOOTAGE DROP-IN POINT
-          When the footage is ready, replace the contents of .aerial__frame with:
-          <video class="aerial__video" src="media/aspen-square-drone.mp4" poster="media/drone-poster.jpg" controls playsinline></video>
-          See README.md for details.
-        -->
+        <p class="aerial__lead fade">A cinematic bird's-eye tour of the community, the grounds, and Kiwanis Park across the street. Choose a flight below.</p>
+        <div class="aerial__tabs fade" role="tablist" aria-label="Choose a drone video">
+          <button class="aerial__tab is-active" data-video="media/aerial-overhead-start.mp4" data-poster="img/aerial/overhead-start.jpg">Community Overhead</button>
+          <button class="aerial__tab" data-video="media/aerial-sign-ascent.mp4" data-poster="img/aerial/sign-ascent.jpg">Sign Ascent</button>
+          <button class="aerial__tab" data-video="media/aerial-for-rent-sign.mp4" data-poster="img/aerial/for-rent-sign.jpg">Front Entrance</button>
+          <button class="aerial__tab" data-video="media/aerial-kiwanis-sign.mp4" data-poster="img/aerial/kiwanis-sign.jpg">Park Entrance</button>
+          <button class="aerial__tab" data-video="media/aerial-kiwanis-overhead.mp4" data-poster="img/aerial/kiwanis-overhead.jpg">Kiwanis Park</button>
+        </div>
         <div class="aerial__frame fade" id="droneFrame">
-          <div class="aerial__placeholder">
-            <svg class="aerial__drone" viewBox="0 0 120 60" aria-hidden="true">
-              <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <rect x="48" y="26" width="24" height="10"/>
-                <path d="M48 30H30m42 0h18"/>
-                <circle cx="24" cy="30" r="3"/>
-                <circle cx="96" cy="30" r="3"/>
-                <path class="aerial__rotor" d="M12 30h24"/>
-                <path class="aerial__rotor" d="M84 30h24"/>
-                <path d="M56 36l-6 8m14-8 6 8"/>
-              </g>
-            </svg>
-            <p class="aerial__coming">Drone Footage Coming Soon</p>
-            <p class="aerial__coming-sub">Check back for the full aerial tour</p>
-          </div>
+          <video class="aerial__video" id="aerialPlayer" controls playsinline preload="none" poster="img/aerial/overhead-start.jpg">
+            <source src="media/aerial-overhead-start.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>

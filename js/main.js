@@ -101,6 +101,22 @@
     }
   });
 
+  /* ---------- Aerial video selector ---------- */
+  var aerialPlayer = document.getElementById("aerialPlayer");
+  var aerialTabs = document.querySelectorAll(".aerial__tab");
+  aerialTabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      if (tab.classList.contains("is-active")) return;
+      aerialTabs.forEach(function (t) { t.classList.remove("is-active"); });
+      tab.classList.add("is-active");
+      aerialPlayer.poster = tab.getAttribute("data-poster");
+      var source = aerialPlayer.querySelector("source");
+      source.src = tab.getAttribute("data-video");
+      aerialPlayer.load();
+      aerialPlayer.play().catch(function () { /* wait for the visitor to press play */ });
+    });
+  });
+
   /* ---------- Virtual tour modal ---------- */
   var tourModal = document.getElementById("tourModal");
   var tourBody = document.getElementById("tourBody");

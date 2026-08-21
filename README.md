@@ -18,19 +18,10 @@ Hero · Intro · Amenities · **Aerial Views (drone)** · Now Leasing · Floor P
 
 The hero background is real drone footage (`media/hero-drone.webm` + `media/hero-drone.mp4`, muted auto-playing loop, ~5 MB each) compressed from "Aspen Square Overhead Fly Through - Home Page.MP4". `img/hero-poster.jpg` shows while it loads and `img/hero.jpg` is the static fallback. To swap the clip, re-encode with ffmpeg (scale to 1280px, strip audio, `-movflags +faststart` for the mp4) and replace both files.
 
-## Adding the drone footage (Aerial Views section)
+## Aerial Views section
 
-The **Aerial Views** section (`#aerial`) is a reserved cinematic showcase, currently showing an animated "coming soon" placeholder. When the footage is ready:
+Five drone flights live in the Aerial Views section (`#aerial`) with a tab selector: Community Overhead, Sign Ascent, Front Entrance, Park Entrance, and Kiwanis Park. Files are `media/aerial-*.mp4` (1280p, muted, streaming-optimized) with poster frames in `img/aerial/`. To add or swap a flight, add the compressed MP4 + poster and a matching `.aerial__tab` button in `index.html` (`data-video` / `data-poster`).
 
-1. Add the video to the repo, e.g. `media/aspen-square-drone.mp4` (and ideally a poster frame `media/drone-poster.jpg`).
-2. In `index.html`, find the `DRONE FOOTAGE DROP-IN POINT` comment and replace the contents of `<div class="aerial__frame" id="droneFrame">` with:
-
-   ```html
-   <video class="aerial__video" src="media/aspen-square-drone.mp4"
-          poster="media/drone-poster.jpg" controls playsinline></video>
-   ```
-
-The animated golden frame around the section stays and will wrap the video automatically. For a large file, consider hosting the video on a CDN or as an unlisted YouTube/Vimeo embed instead and placing the `<iframe>` in the same spot.
 
 ## Photography
 
