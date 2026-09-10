@@ -13,6 +13,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23a51e36'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia'>M</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "name": "Aspen Square Apartments",
+    "url": "https://mclay-properties.vercel.app/",
+    "telephone": "+1-608-774-8718",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2605 N Pontiac Dr",
+      "addressLocality": "Janesville",
+      "addressRegion": "WI",
+      "postalCode": "53545",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 42.713798, "longitude": -88.989342 },
+    "parentOrganization": { "@type": "Organization", "name": "McLay Properties" }
+  }
+  </script>
 </head>
 <body>
 
@@ -29,6 +48,7 @@
         <a href="#floorplans">Floor Plans</a>
         <a href="#gallery">Gallery</a>
         <a href="#neighborhood">Neighborhood</a>
+        <a href="#apply">Apply</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="btn btn--solid btn--nav">Schedule a Tour</a>
       </nav>
@@ -67,7 +87,7 @@
         <p class="hero__sub fade">Spacious two-bedroom apartment homes offering condo living without the maintenance fees — directly across from Kiwanis Park.</p>
         <div class="hero__actions fade">
           <a href="#contact" class="btn btn--solid btn--lg">Schedule a Tour</a>
-          <a href="#contact" class="btn btn--outline-light btn--lg">Apply Now</a>
+          <a href="#apply" class="btn btn--outline-light btn--lg">Apply Now</a>
         </div>
       </div>
     </section>
@@ -241,7 +261,10 @@
     <!-- ============ NEIGHBORHOOD ============ -->
     <section class="hood" id="neighborhood">
       <div class="container hood__grid">
-        <div class="hood__media fade" aria-hidden="true"></div>
+        <figure class="hood__media fade">
+          <img src="img/area-map-2026.jpg" alt="Labeled aerial map of the neighborhood around Aspen Square Apartments: Kiwanis Park across the street; retail pins for Woodman's, Target, Menards, Home Depot, Blain's Farm and Fleet, Best Buy, and Uptown Janesville; dining pins for Olive Garden, Texas Roadhouse, Buffalo Wild Wings, Qdoba, Applebee's, McDonald's, and Taco Bell; Associated Bank; Kennedy Elementary; and, new since 2025, Raising Cane's and the Woodman's Center arena" loading="lazy" width="1800" height="1334">
+          <figcaption>Every pin is minutes away. New-since-2025 additions in red. Aerial imagery: USGS (public domain); newest construction may postdate the photo.</figcaption>
+        </figure>
         <div class="hood__text">
           <p class="eyebrow fade">Neighborhood</p>
           <h2 class="fade">In the Heart of Janesville's Eastside</h2>
@@ -255,12 +278,46 @@
               <p>Groceries minutes away, alongside Janesville's finest shopping and dining.</p>
             </li>
             <li class="fade">
+              <strong>Woodman's Center &amp; Uptown Janesville</strong>
+              <p>The new 140,000 sq ft sports &amp; convention arena (2025) and the mall's shops, minutes west.</p>
+            </li>
+            <li class="fade">
+              <strong>Milton Ave &amp; Humes Rd Dining</strong>
+              <p>Olive Garden, Texas Roadhouse, Buffalo Wild Wings, Qdoba — plus the brand-new Raising Cane's.</p>
+            </li>
+            <li class="fade">
               <strong>Interstate Access</strong>
               <p>Quick connections to I-39 / I-90 for easy commutes to Madison, Beloit and beyond.</p>
             </li>
           </ul>
           <a class="btn btn--outline fade" href="https://www.google.com/maps/search/?api=1&amp;query=2605+N+Pontiac+Dr+Janesville+WI" target="_blank" rel="noopener">Get Directions</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ APPLY ============ -->
+    <section class="apply" id="apply">
+      <div class="container">
+        <p class="eyebrow eyebrow--center fade">Apply</p>
+        <h2 class="apply__title fade">Ready to Make Aspen Square Home?</h2>
+        <div class="apply__grid">
+          <div class="apply__card fade">
+            <h3>1. Tour It</h3>
+            <p>Call <a href="tel:16087748718">608-774-8718</a> to schedule a showing — most tours happen within a day or two.</p>
+          </div>
+          <div class="apply__card fade">
+            <h3>2. Apply</h3>
+            <p>Complete the rental application. Online applications with secure credit-check payment are launching soon — until then, call and we'll get yours started same-day.</p>
+          </div>
+          <div class="apply__card fade">
+            <h3>3. Move In</h3>
+            <p>Once approved, we schedule your lease signing and hand over the keys.</p>
+          </div>
+        </div>
+        <div class="apply__actions fade">
+          <a href="tel:16087748718" class="btn btn--solid btn--lg">Call to Apply — 608-774-8718</a>
+        </div>
+        <p class="apply__eho fade">McLay Properties is committed to Equal Housing Opportunity. All applications are evaluated using the same written criteria.</p>
       </div>
     </section>
 
@@ -326,12 +383,17 @@
         <a href="#tour">Virtual Tour</a>
         <a href="#gallery">Gallery</a>
         <a href="#neighborhood">Neighborhood</a>
+        <a href="#apply">Apply</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer__contact">
         <p class="footer__label">Leasing</p>
         <a href="tel:16087748718">608-774-8718</a>
       </div>
+    </div>
+    <div class="container footer__legal footer__eho">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" style="flex:none;"><path fill="currentColor" d="M12 2 1 10.5h2.4V22h17.2V10.5H23L12 2zm6.6 18H5.4v-10l6.6-5 6.6 5v10zM8 12.4h8v2H8v-2zm0 3.8h8v2H8v-2z"/></svg>
+      <p>Equal Housing Opportunity. McLay Properties does business in accordance with the federal Fair Housing Act and the Wisconsin Open Housing Law, and does not discriminate on the basis of race, color, religion, sex, disability, familial status, national origin, sexual orientation, marital status, age, ancestry, lawful source of income, or status as a victim of domestic abuse. If any part of this website is difficult to use, call <a href="tel:16087748718">608-774-8718</a> and we will help you in an alternative format.</p>
     </div>
     <div class="container footer__legal">
       <p>&copy; <span id="year">2026</span> McLay Properties. All rights reserved.</p>
