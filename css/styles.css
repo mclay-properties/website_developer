@@ -159,7 +159,8 @@ a { color: inherit; }
   color: var(--crimson);
 }
 
-.header__nav { display: flex; align-items: center; gap: 1.7rem; }
+.header__nav { display: flex; align-items: center; gap: clamp(0.9rem, 1.6vw, 1.7rem); flex-shrink: 0; }
+.header__nav a { white-space: nowrap; }
 .header__nav a:not(.btn) {
   font-size: 0.78rem;
   font-weight: 600;
@@ -976,3 +977,19 @@ a { color: inherit; }
 .app-form .money { position: relative; display: block; margin-top: 0.35rem; }
 .app-form .money__sign { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--ink-soft); font-weight: 500; pointer-events: none; }
 .app-form .money input { margin-top: 0; padding-left: 1.7rem; }
+
+/* ---------- Header nav: keep tabs on one line (must stay at end of file) ---------- */
+@media (max-width: 1240px) {
+  .header__nav a:not(.btn) { font-size: 0.72rem; letter-spacing: 0.08em; }
+  .btn--nav { padding: 0.65rem 1.1rem; font-size: 0.72rem; }
+}
+@media (max-width: 1180px) {
+  /* Schedule button is redundant here (hero + promo bar carry it); drop it so the tabs stay on one line */
+  .header__nav .btn--nav { display: none; }
+  .header__nav { gap: 0.9rem; }
+  .header__brand-name { white-space: nowrap; }
+}
+@media (max-width: 1040px) {
+  .header__nav a:not(.btn) { font-size: 0.66rem; letter-spacing: 0.04em; }
+  .header__nav { gap: 0.65rem; }
+}
