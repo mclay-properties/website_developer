@@ -941,3 +941,32 @@ a { color: inherit; }
 /* Equal Housing Opportunity row (do not remove) */
 .footer__eho { display: flex; align-items: flex-start; gap: 12px; padding-top: 18px; font-size: 0.78rem; opacity: 0.85; }
 .footer__eho p { margin: 0; max-width: 90ch; }
+
+/* ---------- Apply page ---------- */
+.header--solid { position: sticky; top: 0; background: var(--white); border-bottom: 1px solid var(--line); }
+.header--solid .header__brand-name, .header--solid .header__nav a:not(.btn) { color: var(--ink); }
+.app { padding: clamp(3rem, 7vw, 5.5rem) 0; background: var(--offwhite); }
+.app__wrap { max-width: 820px; }
+.app__title { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 600; margin: 0.4rem 0 0.8rem; }
+.app__lead { color: var(--ink-soft); max-width: 62ch; margin-bottom: 1.8rem; }
+.app__steps { list-style: none; display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 0 0 2rem; font-size: 0.86rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+.app__steps li { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.9rem; border: 1px solid var(--line); background: var(--white); }
+.app__steps span { display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--line); color: var(--ink); font-size: 0.78rem; }
+.app__steps .is-current { border-color: var(--crimson); color: var(--crimson); }
+.app__steps .is-current span, .app__steps .is-done span { background: var(--crimson); color: var(--white); }
+.app-form { background: var(--white); border: 1px solid var(--line); padding: clamp(1.4rem, 4vw, 2.4rem); }
+.app-form fieldset { border: 0; padding: 0; margin: 0 0 1.8rem; }
+.app-form legend { font-weight: 600; color: var(--crimson); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.82rem; margin-bottom: 0.9rem; }
+.app-form label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; }
+.app-form input:not([type=checkbox]), .app-form textarea { display: block; width: 100%; margin-top: 0.35rem; padding: 0.75rem 0.85rem; font: inherit; font-size: 0.95rem; border: 1px solid var(--line); background: var(--white); color: var(--ink); }
+.app-form input:focus, .app-form textarea:focus { outline: 2px solid var(--crimson); outline-offset: 1px; border-color: var(--crimson); }
+.app-form .check { display: grid; grid-template-columns: auto 1fr; gap: 0.7rem; align-items: start; font-weight: 400; color: var(--ink-soft); font-size: 0.86rem; }
+.app-form .check input { margin-top: 0.25rem; width: 1.05rem; height: 1.05rem; accent-color: var(--crimson); }
+.app-form .btn--full { width: 100%; margin-top: 0.5rem; }
+.app__next { margin-top: 2.2rem; padding: 1.8rem; border: 1px solid var(--line); background: var(--white); }
+.app__next h2 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.6rem; }
+.app__next p { color: var(--ink-soft); font-size: 0.94rem; margin-bottom: 1rem; }
+.app__eho { margin-top: 2rem; font-size: 0.78rem; color: var(--ink-soft); max-width: 90ch; }
+@media (max-width: 640px) { .app-form .form__row { grid-template-columns: 1fr; gap: 0; } }
+
+.page-apply .app { padding-top: 7.5rem; }

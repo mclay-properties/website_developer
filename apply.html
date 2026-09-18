@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply Online — Aspen Square Apartments | McLay Properties</title>
+  <meta name="description" content="Apply online for a two-bedroom apartment home at Aspen Square in Janesville, WI. Submit your application in minutes, then complete secure screening.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23a51e36'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia'>M</text></svg>">
+</head>
+<body class="page-apply">
+
+  <header class="header header--solid" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__brand">
+        <span class="header__brand-name">McLay Properties</span>
+        <span class="header__brand-sub">Aspen Square Apartments</span>
+      </a>
+      <nav class="header__nav" aria-label="Primary">
+        <a href="index.html#amenities">Amenities</a>
+        <a href="index.html#floorplans">Floor Plans</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#neighborhood">Neighborhood</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="tel:16087748718" class="btn btn--solid btn--nav">608-774-8718</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app">
+    <div class="container app__wrap">
+      <p class="eyebrow">Apply Online</p>
+      <h1 class="app__title">Rental Application</h1>
+      <p class="app__lead">Takes about five minutes. Each adult (18+) who will live in the home submits their own application. We evaluate every application using the same written criteria.</p>
+
+      <ol class="app__steps" aria-label="Application steps">
+        <li class="is-current"><span>1</span> Application</li>
+        <li><span>2</span> Screening &amp; fee</li>
+        <li><span>3</span> Decision</li>
+      </ol>
+
+      <form class="app-form" id="applyForm" novalidate>
+        <fieldset>
+          <legend>Applicant</legend>
+          <div class="form__row">
+            <label>First name <input type="text" name="first_name" autocomplete="given-name" required></label>
+            <label>Last name <input type="text" name="last_name" autocomplete="family-name" required></label>
+          </div>
+          <div class="form__row">
+            <label>Phone <input type="tel" name="phone" autocomplete="tel" required></label>
+            <label>Email <input type="email" name="email" autocomplete="email" required></label>
+          </div>
+          <div class="form__row">
+            <label>Desired move-in date <input type="date" name="move_in" required></label>
+            <label>Number of occupants <input type="number" name="occupants" min="1" max="6" required></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Current residence</legend>
+          <label>Street address <input type="text" name="current_address" autocomplete="street-address" required></label>
+          <div class="form__row">
+            <label>City, State <input type="text" name="current_city" required></label>
+            <label>How long there? <input type="text" name="current_years" placeholder="e.g. 3 years"></label>
+          </div>
+          <div class="form__row">
+            <label>Landlord / manager name <input type="text" name="landlord_name"></label>
+            <label>Landlord phone <input type="tel" name="landlord_phone"></label>
+          </div>
+          <label>Reason for moving <input type="text" name="reason_moving"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Employment &amp; income</legend>
+          <div class="form__row">
+            <label>Employer <input type="text" name="employer" required></label>
+            <label>Position <input type="text" name="position"></label>
+          </div>
+          <div class="form__row">
+            <label>Employer phone <input type="tel" name="employer_phone"></label>
+            <label>Gross monthly income <input type="text" name="income" inputmode="decimal" placeholder="$" required></label>
+          </div>
+          <label>Other income sources (optional — all lawful sources of income are considered) <input type="text" name="other_income"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Household details</legend>
+          <div class="form__row">
+            <label>Pets (type, breed, weight) <input type="text" name="pets" placeholder="None"></label>
+            <label>Vehicles (year / make / plate) <input type="text" name="vehicles"></label>
+          </div>
+          <label>Anything else we should know? <textarea name="notes" rows="3"></textarea></label>
+        </fieldset>
+
+        <fieldset class="app-form__consent">
+          <legend>Consent</legend>
+          <label class="check">
+            <input type="checkbox" name="consent_accuracy" required>
+            <span>I certify that the information above is true and complete, and I authorize McLay Properties to verify it, including contacting my current landlord and employer.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="consent_screening" required>
+            <span>I understand that a credit and background screening is required before approval, that the screening fee is paid through a secure third-party payment page (never on this website), and that under Wisconsin law I may instead provide my own consumer credit report dated within the last 30 days.</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn btn--solid btn--lg btn--full">Submit Application</button>
+        <p class="form__note">Questions? Call <a href="tel:16087748718">608-774-8718</a>. We do not ask for your Social Security number or card details on this page.</p>
+      </form>
+
+      <section class="app__next" id="screening" aria-labelledby="screeningTitle">
+        <h2 id="screeningTitle">Step 2 — Screening &amp; credit check</h2>
+        <p id="screeningCopy">After your application is received, you'll complete the credit and background screening and pay the screening fee on a secure, PCI-compliant payment page. Card numbers are never entered on or stored by this website.</p>
+        <a id="screeningBtn" class="btn btn--outline" href="#" hidden>Pay Screening Fee &amp; Start Credit Check</a>
+      </section>
+
+      <p class="app__eho">Equal Housing Opportunity. McLay Properties does business in accordance with the federal Fair Housing Act and the Wisconsin Open Housing Law, and does not discriminate on the basis of race, color, religion, sex, disability, familial status, national origin, sexual orientation, marital status, age, ancestry, lawful source of income, or status as a victim of domestic abuse.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__legal">
+      <p>&copy; <span id="year">2026</span> McLay Properties. All rights reserved. &middot; <a href="index.html">Back to Aspen Square</a></p>
+    </div>
+  </footer>
+
+  <script src="js/apply.js"></script>
+</body>
+</html>
