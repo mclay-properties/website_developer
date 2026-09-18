@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23a51e36'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia'>M</text></svg>">
 </head>
 <body class="page-apply">
@@ -40,7 +40,6 @@
       <ol class="app__steps" aria-label="Application steps">
         <li class="is-current"><span>1</span> Application</li>
         <li><span>2</span> Screening &amp; fee</li>
-        <li><span>3</span> Decision</li>
       </ol>
 
       <form class="app-form" id="applyForm" novalidate>
@@ -64,7 +63,66 @@
           <legend>Current residence</legend>
           <label>Street address <input type="text" name="current_address" autocomplete="street-address" required></label>
           <div class="form__row">
-            <label>City, State <input type="text" name="current_city" required></label>
+            <label>City <input type="text" name="current_city" autocomplete="address-level2" required></label>
+            <label>State
+              <select name="current_state" autocomplete="address-level1" required>
+                <option value="" selected disabled>Select a state</option>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>District of Columbia</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachusetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Rhode Island</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+              </select>
+            </label>
+          </div>
+          <div class="form__row">
+            <label>ZIP code <input type="text" name="current_zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?"></label>
             <label>How long there? <input type="text" name="current_years" placeholder="e.g. 3 years"></label>
           </div>
           <div class="form__row">
@@ -82,7 +140,7 @@
           </div>
           <div class="form__row">
             <label>Employer phone <input type="tel" name="employer_phone"></label>
-            <label>Gross monthly income <input type="text" name="income" inputmode="decimal" placeholder="$" required></label>
+            <label>Gross monthly income <span class="money"><span class="money__sign" aria-hidden="true">$</span><input type="text" name="income" inputmode="decimal" placeholder="0.00" required></span></label>
           </div>
           <label>Other income sources (optional — all lawful sources of income are considered) <input type="text" name="other_income"></label>
         </fieldset>

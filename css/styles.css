@@ -970,3 +970,9 @@ a { color: inherit; }
 @media (max-width: 640px) { .app-form .form__row { grid-template-columns: 1fr; gap: 0; } }
 
 .page-apply .app { padding-top: 7.5rem; }
+
+.app-form select { display: block; width: 100%; margin-top: 0.35rem; padding: 0.75rem 0.85rem; font: inherit; font-size: 0.95rem; border: 1px solid var(--line); background: var(--white); color: var(--ink); }
+.app-form select:focus { outline: 2px solid var(--crimson); outline-offset: 1px; border-color: var(--crimson); }
+.app-form .money { position: relative; display: block; margin-top: 0.35rem; }
+.app-form .money__sign { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--ink-soft); font-weight: 500; pointer-events: none; }
+.app-form .money input { margin-top: 0; padding-left: 1.7rem; }
