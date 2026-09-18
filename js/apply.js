@@ -33,6 +33,39 @@ var APPLY_CONFIG = {
     copy.textContent += " The leasing office will text or email you the Zillow screening link as soon as your application is received.";
   }
 
+
+  /* ---------- Live input formatting ---------- */
+  function formatPhone(raw) {
+    var d = raw.replace(/\D/g, "");
+    if (d.length === 11 && d.charAt(0) === "1") { d = d.slice(1); }
+    d = d.slice(0, 10);
+    if (d.length < 4) { return d; }
+    if (d.length < 7) { return "(" + d.slice(0, 3) + ") " + d.slice(3); }
+    return "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6);
+  }
+  function formatMoney(raw) {
+    var cleaned = raw.replace(/[^\d.]/g, "");
+    var parts = cleaned.split(".");
+    var whole = parts[0].replace(/^0+(?=\d)/, "");
+    var dec = parts.length > 1 ? "." + parts.slice(1).join("").slice(0, 2) : "";
+    whole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return whole + dec;
+  }
+  function liveFormat(el, fn) {
+    el.addEventListener("input", function () {
+      var atEnd = el.selectionStart === el.value.length;
+      el.value = fn(el.value);
+      if (atEnd) { el.setSelectionRange(el.value.length, el.value.length); }
+    });
+    el.addEventListener("blur", function () { el.value = fn(el.value); });
+  }
+  document.querySelectorAll("#applyForm input[type=tel]").forEach(function (el) {
+    el.placeholder = "(608) 555-0123";
+    liveFormat(el, formatPhone);
+  });
+  var incomeEl = document.querySelector("#applyForm input[name=income]");
+  if (incomeEl) { incomeEl.placeholder = "4,200"; liveFormat(incomeEl, formatMoney); }
+
   /* Application submit */
   var form = document.getElementById("applyForm");
   form.addEventListener("submit", function (e) {
