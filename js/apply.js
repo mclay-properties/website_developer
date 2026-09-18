@@ -7,7 +7,12 @@
  *                  Card details are entered THERE — never on this site.
  */
 var APPLY_CONFIG = {
-  endpoint: "",
+  /* FormSubmit relays the posted application to the leasing inbox — no account, one-time
+     "Activate" click from that inbox on the first submission. Change the address here if
+     Quin wants applications at a different email. */
+  endpoint: "https://formsubmit.co/ajax/info@mclayproperties.com",
+  /* Zillow Applications: paste Quin's "Apply" link from Zillow Rental Manager here.
+     Applicant pays Zillow's fee there (covers credit + background + eviction); card details never touch this site. */
   screeningUrl: "",
   leasingEmail: "info@mclayproperties.com",
   leasingPhone: "608-774-8718"
@@ -25,7 +30,7 @@ var APPLY_CONFIG = {
     btn.rel = "noopener";
     btn.hidden = false;
   } else {
-    copy.textContent += " The leasing office will text or email you the secure payment link as soon as your application is received.";
+    copy.textContent += " The leasing office will text or email you the Zillow screening link as soon as your application is received.";
   }
 
   /* Application submit */
@@ -58,20 +63,23 @@ var APPLY_CONFIG = {
     }
 
     if (APPLY_CONFIG.endpoint) {
+      var payload = {};
+      data.forEach(function (v, k) { payload[k] = (k.indexOf("consent_") === 0 && v === "on") ? "Yes" : v; });
+      payload._subject = subject;
+      payload._template = "table";
+      payload._captcha = "false";
       fetch(APPLY_CONFIG.endpoint, {
         method: "POST",
-        headers: { "Accept": "application/json" },
-        body: data
-      }).then(function (r) {
-        if (!r.ok) { throw new Error("bad status"); }
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(function (r) { return r.json(); }).then(function (res) {
+        if (!res || String(res.success) !== "true") { throw new Error("relay rejected"); }
         done("Application received — thank you, " + data.get("first_name") + ". Next: complete screening below.");
       }).catch(function () {
-        done("We couldn't send that automatically. Please call " + APPLY_CONFIG.leasingPhone + " and we'll take your application by phone.");
+        done("We couldn't submit that automatically. Please call " + APPLY_CONFIG.leasingPhone + " and we'll take your application by phone.");
       });
     } else {
-      window.location.href = "mailto:" + APPLY_CONFIG.leasingEmail +
-        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      done("Opening your email app to send your application… If it doesn't open, call " + APPLY_CONFIG.leasingPhone + ". Next: screening below.");
+      done("Online submission isn't active yet. Please call " + APPLY_CONFIG.leasingPhone + " to apply.");
     }
   });
 })();
