@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="stylesheet" href="css/styles.css?v=8">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23a51e36'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia'>M</text></svg>">
   <script type="application/ld+json">
   {
@@ -235,26 +235,75 @@
         <h2 class="h2--center fade">Take a Look Around</h2>
         <div class="gallery__grid">
           <figure class="gallery__item gallery__item--wide fade">
-            <div class="gallery__img gallery__img--1"></div>
+            <img class="gallery__img" src="img/exterior.jpg" alt="Aspen Square building exterior with entrance sign" loading="lazy">
             <figcaption>Aspen Square Exteriors</figcaption>
           </figure>
-          <figure class="gallery__item fade">
-            <div class="gallery__img gallery__img--2"></div>
-            <figcaption>Open Living Spaces</figcaption>
-          </figure>
-          <figure class="gallery__item fade">
-            <div class="gallery__img gallery__img--3"></div>
-            <figcaption>Laundry Facilities</figcaption>
-          </figure>
-          <figure class="gallery__item fade">
-            <div class="gallery__img gallery__img--4"></div>
-            <figcaption>Private Garages &amp; Storage</figcaption>
+          <figure class="gallery__item gallery__item--wide fade">
+            <img class="gallery__img" src="img/gallery/living-furnished.jpg" alt="Bright living room with sliding patio door, open to the dining area and kitchen" loading="lazy">
+            <figcaption>Living Room</figcaption>
           </figure>
           <figure class="gallery__item gallery__item--wide fade">
-            <div class="gallery__img gallery__img--5"></div>
+            <img class="gallery__img" src="img/gallery/living-kitchen-open.jpg" alt="Empty living room with carpet, open to a kitchen with wood cabinets" loading="lazy">
+            <figcaption>Open Layout</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide fade">
+            <img class="gallery__img" src="img/gallery/kitchen.jpg" alt="Kitchen with dark wood cabinets, white appliances and plank flooring" loading="lazy">
+            <figcaption>Kitchen</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/kitchen-dining.jpg" alt="Dining table beside a kitchen with wood cabinets and a ceiling fan" loading="lazy">
+            <figcaption>Kitchen &amp; Dining</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/kitchen-white.jpg" alt="Kitchen with white cabinets, dining table and ceiling fan" loading="lazy">
+            <figcaption>Kitchen, White Cabinets</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/bedroom-furnished-1.jpg" alt="Furnished bedroom with king bed, ceiling fan and carpet" loading="lazy">
+            <figcaption>Bedroom</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/bedroom-furnished-2.jpg" alt="Furnished bedroom with wood bed frame and window" loading="lazy">
+            <figcaption>Bedroom</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/bedroom-vacant.jpg" alt="Empty carpeted bedroom with a window" loading="lazy">
+            <figcaption>Bedroom</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/bathroom-furnished.jpg" alt="Bathroom with vanity, tub and shower curtain" loading="lazy">
+            <figcaption>Bathroom</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/bathroom-vacant.jpg" alt="Bathroom with wood vanity, tub and shower with grab bars" loading="lazy">
+            <figcaption>Bathroom</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/patio.jpg" alt="Covered patio with railing, table and chairs, overlooking trees" loading="lazy">
+            <figcaption>Patio</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/laundry-1.jpg" alt="Onsite laundry room with coin-operated washers and dryers" loading="lazy">
+            <figcaption>Laundry Room</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/laundry-2.jpg" alt="Onsite coin-operated washer and dryer" loading="lazy">
+            <figcaption>Laundry Room</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/garages.jpg" alt="Row of garages with white overhead doors" loading="lazy">
+            <figcaption>Garages</figcaption>
+          </figure>
+          <figure class="gallery__item fade">
+            <img class="gallery__img" src="img/gallery/carports.jpg" alt="Covered carports with a parked vehicle" loading="lazy">
+            <figcaption>Carports</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--full fade">
+            <img class="gallery__img" src="img/site-map.jpg" alt="Community map showing buildings, garages, carports and storage" loading="lazy">
             <figcaption>Community Map &mdash; Garages, Carports &amp; Storage</figcaption>
           </figure>
         </div>
+        <p class="gallery__note fade">Finishes vary by home. Furnishings shown belong to current residents and are not included.</p>
       </div>
     </section>
 
@@ -303,11 +352,11 @@
         <div class="apply__grid">
           <div class="apply__card fade">
             <h3>1. Tour It</h3>
-            <p>Call <a href="tel:16087748718">608-774-8718</a> to schedule a showing — most tours happen within a day or two.</p>
+            <p>Call <a href="tel:16087748718">608-774-8718</a> to schedule a showing.</p>
           </div>
           <div class="apply__card fade">
             <h3>2. Apply</h3>
-            <p>Complete the rental application online in about five minutes, then finish your credit and background screening on a secure payment page.</p>
+            <p>Complete the rental application online in about five minutes, then finish your screening through Zillow. Zillow's $40 fee is paid directly to Zillow on its secure page.</p>
           </div>
           <div class="apply__card fade">
             <h3>3. Move In</h3>

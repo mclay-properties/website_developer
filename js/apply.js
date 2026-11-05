@@ -12,7 +12,7 @@ var APPLY_CONFIG = {
      Quin wants applications at a different email. */
   endpoint: "https://formsubmit.co/ajax/info@mclayproperties.com",
   /* Zillow Applications: paste Quin's "Apply" link from Zillow Rental Manager here.
-     Applicant pays Zillow's fee there (covers credit + background + eviction); card details never touch this site. */
+     Applicant pays Zillow's $40 fee there (covers credit + background + eviction); card details never touch this site. */
   screeningUrl: "",
   leasingEmail: "info@mclayproperties.com",
   leasingPhone: "608-774-8718"
@@ -82,11 +82,12 @@ var APPLY_CONFIG = {
     var subject = "Aspen Square rental application — " + name;
     var body = "Rental application for Aspen Square Apartments\n\n" + lines.join("\n");
 
-    function done(msg) {
+    function done(msg, ok) {
       var note = form.querySelector(".form__success") || document.createElement("p");
       note.className = "form__success";
       note.textContent = msg;
       form.appendChild(note);
+      if (!ok) { return; }
       form.querySelector("button[type=submit]").disabled = true;
       document.querySelectorAll(".app__steps li").forEach(function (li, i) {
         li.classList.toggle("is-current", i === 1);
@@ -107,7 +108,7 @@ var APPLY_CONFIG = {
         body: JSON.stringify(payload)
       }).then(function (r) { return r.json(); }).then(function (res) {
         if (!res || String(res.success) !== "true") { throw new Error("relay rejected"); }
-        done("Application received — thank you, " + data.get("first_name") + ". Next: complete screening below.");
+        done("Application received — thank you, " + data.get("first_name") + ". Next: complete screening below.", true);
       }).catch(function () {
         done("We couldn't submit that automatically. Please call " + APPLY_CONFIG.leasingPhone + " and we'll take your application by phone.");
       });

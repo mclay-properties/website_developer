@@ -607,11 +607,10 @@ a { color: inherit; }
 .gallery__item:hover .gallery__img { transform: scale(1.05); }
 .gallery__item figcaption { transition: transform 0.5s var(--ease); }
 .gallery__item:hover figcaption { transform: translateY(-4px); }
-.gallery__img--1 { background-image: url("../img/exterior.jpg"); }
-.gallery__img--2 { background-image: url("../img/living.jpg"); }
-.gallery__img--3 { background-image: url("../img/laundry.jpg"); }
-.gallery__img--4 { background-image: url("../img/garages.jpg"); }
-.gallery__img--5 { background-image: url("../img/site-map.jpg"); }
+.gallery__img { display: block; width: 100%; object-fit: cover; object-position: center; }
+.gallery__item--full { grid-column: span 6; }
+.gallery__item--full .gallery__img { aspect-ratio: auto; object-fit: contain; background: var(--white); max-height: 80vh; }
+.gallery__note { margin-top: 1.2rem; text-align: center; font-size: 0.85rem; color: var(--ink-soft); }
 .gallery__item figcaption {
   position: absolute;
   inset: auto 0 0 0;
