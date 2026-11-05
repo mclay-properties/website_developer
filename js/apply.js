@@ -11,8 +11,7 @@ var APPLY_CONFIG = {
      "Activate" click from that inbox on the first submission. Change the address here if
      Quin wants applications at a different email. */
   endpoint: "https://formsubmit.co/ajax/info@mclayproperties.com",
-  /* Zillow Applications: paste Quin's "Apply" link from Zillow Rental Manager here.
-     Applicant pays Zillow's $40 fee there (covers credit + background + eviction); card details never touch this site. */
+  /* Hosted payment page for the credit check fee (e.g. a Stripe Payment Link). Card details are entered there, never on this site. */
   screeningUrl: "",
   leasingEmail: "info@mclayproperties.com",
   leasingPhone: "608-774-8718"
@@ -29,8 +28,6 @@ var APPLY_CONFIG = {
     btn.target = "_blank";
     btn.rel = "noopener";
     btn.hidden = false;
-  } else {
-    copy.textContent += " The leasing office will text or email you the Zillow screening link as soon as your application is received.";
   }
 
 
@@ -108,7 +105,7 @@ var APPLY_CONFIG = {
         body: JSON.stringify(payload)
       }).then(function (r) { return r.json(); }).then(function (res) {
         if (!res || String(res.success) !== "true") { throw new Error("relay rejected"); }
-        done("Application received — thank you, " + data.get("first_name") + ". Next: complete screening below.", true);
+        done("Application received — thank you, " + data.get("first_name") + ". We will contact you about next steps.", true);
       }).catch(function () {
         done("We couldn't submit that automatically. Please call " + APPLY_CONFIG.leasingPhone + " and we'll take your application by phone.");
       });
