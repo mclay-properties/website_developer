@@ -90,6 +90,10 @@ var APPLY_CONFIG = {
         li.classList.toggle("is-current", i === 1);
         li.classList.toggle("is-done", i === 0);
       });
+      if (APPLY_CONFIG.screeningUrl) {
+        var em = data.get("email");
+        btn.href = APPLY_CONFIG.screeningUrl + (APPLY_CONFIG.screeningUrl.indexOf("?") < 0 ? "?" : "&") + "prefilled_email=" + encodeURIComponent(em);
+      }
       document.getElementById("screening").scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
