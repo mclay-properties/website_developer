@@ -715,6 +715,14 @@ a { color: inherit; }
   outline: none;
   border-color: var(--crimson);
 }
+/* Spam trap field: off-screen so visitors never see or tab into it */
+.form__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form__note { font-size: 0.85rem; color: var(--ink-soft); text-align: center; }
 .form__note a { color: var(--crimson); font-weight: 600; }
 .form__success {

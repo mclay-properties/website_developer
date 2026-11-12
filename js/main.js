@@ -58,30 +58,87 @@
     });
   }
 
-  /* ---------- Contact form (mailto handoff until a backend is wired up) ---------- */
+  /* ---------- Contact form ----------
+     Posts to /api/inquiry (api/inquiry.js), which emails the leasing inbox. If that
+     function is missing or not yet configured, falls back to opening the visitor's
+     own email app, which is how the form worked before the function existed. */
   var form = document.getElementById("contactForm");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var data = new FormData(form);
-    var body =
-      "Name: " + data.get("name") + "\n" +
-      "Phone: " + data.get("phone") + "\n" +
-      "Email: " + (data.get("email") || "—") + "\n\n" +
-      (data.get("message") || "I'd like to schedule a tour of Aspen Square.");
-    var subject = "Aspen Square inquiry from " + data.get("name");
-    window.location.href =
-      "mailto:info@mclayproperties.com?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body);
+  var sendBtn = form.querySelector("button[type=submit]");
+  var sendLabel = sendBtn.textContent;
+  var CONTACT_PHONE = "608-774-8718";
+  var CONTACT_EMAIL = "info@mclayproperties.com";
 
-    if (!form.querySelector(".form__success")) {
-      var note = document.createElement("p");
+  function formNote(msg) {
+    var note = form.querySelector(".form__success");
+    if (!note) {
+      note = document.createElement("p");
       note.className = "form__success";
-      note.textContent =
-        "Opening your email app… If it doesn't open, call us at 608-774-8718.";
+      note.setAttribute("role", "status");
       form.appendChild(note);
     }
+    note.textContent = msg;
+  }
+
+  function openEmailApp(data) {
+    var body =
+      "Name: " + data.name + "\n" +
+      "Phone: " + data.phone + "\n" +
+      "Email: " + (data.email || "—") + "\n\n" +
+      (data.message || "I'd like to schedule a tour of Aspen Square.");
+    window.location.href =
+      "mailto:" + CONTACT_EMAIL + "?subject=" +
+      encodeURIComponent("Aspen Square inquiry from " + data.name) +
+      "&body=" +
+      encodeURIComponent(body);
+    formNote("Opening your email app… If it doesn't open, call us at " + CONTACT_PHONE + ".");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (sendBtn.disabled) return;
+
+    var fd = new FormData(form);
+    var data = {
+      name: (fd.get("name") || "").trim(),
+      phone: (fd.get("phone") || "").trim(),
+      email: (fd.get("email") || "").trim(),
+      message: (fd.get("message") || "").trim(),
+      trap: fd.get("trap") || ""
+    };
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending…";
+
+    fetch("/api/inquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (json) {
+        return { status: r.status, body: json || {} };
+      });
+    }).then(function (res) {
+      if (res.status === 200 && res.body.ok) {
+        form.reset();
+        formNote("Thank you, " + data.name + ". Your inquiry was sent and we'll be in touch soon.");
+      } else if (res.status === 404 || res.status === 405 || res.status === 501 ||
+                 (res.status === 503 && res.body.error === "not_configured")) {
+        openEmailApp(data);
+      } else if (res.status === 422) {
+        formNote(res.body.error === "bad_email"
+          ? "That email address doesn't look right. Please check it and try again."
+          : "Please enter your name and phone number, then try again.");
+      } else if (res.status === 429) {
+        formNote("We've received several inquiries from you already. For anything else, please call " + CONTACT_PHONE + ".");
+      } else {
+        throw new Error("send failed");
+      }
+    }).catch(function () {
+      formNote("Sorry, we couldn't send that. Please call us at " + CONTACT_PHONE + " or email " + CONTACT_EMAIL + ".");
+    }).then(function () {
+      sendBtn.disabled = false;
+      sendBtn.textContent = sendLabel;
+    });
   });
 
   /* ---------- Background music toggle ---------- */
