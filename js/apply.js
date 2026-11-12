@@ -7,10 +7,10 @@
  *                  Card details are entered THERE — never on this site.
  */
 var APPLY_CONFIG = {
-  /* FormSubmit relays the posted application to the leasing inbox — no account, one-time
-     "Activate" click from that inbox on the first submission. Change the address here if
-     Quin wants applications at a different email. */
-  endpoint: "https://formsubmit.co/ajax/info@mclayproperties.com",
+  /* FormSubmit relays the posted application to an inbox after a one-time "Activate" click
+     from that inbox. TEMPORARY: testing inbox. At launch switch to mclayproperties@gmail.com
+     and activate from that inbox. */
+  endpoint: "https://formsubmit.co/ajax/barrett2309@gmail.com",
   /* Hosted payment page for the credit check fee (e.g. a Stripe Payment Link). Card details are entered there, never on this site. */
   screeningUrl: "",
   leasingEmail: "info@mclayproperties.com",
